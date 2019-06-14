@@ -101,9 +101,9 @@ def load_models(mode, device, args):
 			# FCDiscriminator_Scalar
 		# model = FCDiscriminator_Scalar(num_classes=NUM_CLASSES)
 
-		if args.discriminator == "pixel_level":
+		if args.discriminator == "image_level":
 			model = FCDiscriminator_Scalar(num_classes=NUM_CLASSES)
-		elif args.discriminator == "pixel_level_BN":
+		elif args.discriminator == "image_level_BN":
 			model = FCDiscriminator_Scalar_BN(num_classes=NUM_CLASSES)
 		else:
 			raise ValueError("Invalid Discriminator mode! {}".
