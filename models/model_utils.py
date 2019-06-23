@@ -95,16 +95,15 @@ def load_models(mode, device, args):
 			sys.exit(0)
 	elif mode == "Discriminator":
 		from models.discriminator import FCDiscriminator_Scalar, \
-			FCDiscriminator_Scalar_BN
-			# Discriminator_Pixel_Level, \
-			# Discriminator_Patch_Level, \
-			# FCDiscriminator_Scalar
-		# model = FCDiscriminator_Scalar(num_classes=NUM_CLASSES)
+			FCDiscriminator_Scalar_BN, \
+			FCDiscriminator_Pixel
 
 		if args.discriminator == "image_level":
 			model = FCDiscriminator_Scalar(num_classes=NUM_CLASSES)
 		elif args.discriminator == "image_level_BN":
 			model = FCDiscriminator_Scalar_BN(num_classes=NUM_CLASSES)
+		elif args.discriminator == "pixel_level":
+			model = FCDiscriminator_Pixel(num_classes=NUM_CLASSES, input_size = [184,184])
 		else:
 			raise ValueError("Invalid Discriminator mode! {}".
 							 format(args.discriminator))

@@ -16,9 +16,6 @@ from helper_functions.config import ReadConfig_GAN, augment_args_GAN
 from helper_functions.trainer import run_training, run_testing
 from models.model_utils import load_models
 
-from models.deeplab_multi import DeeplabMulti
-from models.discriminator import FCDiscriminator
-
 import torch
 import torch.optim as optim
 import torch.nn as nn
@@ -52,41 +49,45 @@ if __name__ == "__main__":
 					  default=0.1,
 					  help="coefficient for CE loss w.r.t. target")
 	parser.add_option("--lambda-adv-target", type="float",
-					  dest="lambda_adv_target",
-					  default=0.2,
-					  help="coefficient for adversarial loss")
+					dest="lambda_adv_target",
+					default=0.2,
+					help="coefficient for adversarial loss")
+	parser.add_option("--lambda-semi-target", type="float",
+					dest="lambda_semi_target",
+					default=0.0,
+					help="coefficient for SEMI loss w.r.t. target")
+	parser.add_option("--mask-T", type=float,
+					dest="mask_T",
+					default=0.2,
+					help="mask T for semi adversarial training.")
+	parser.add_option("--semi-start-epoch", type="int",
+					dest="semi_start_epoch",
+					default=0,
+					help="start iterations for semi loss")
 	parser.add_option("--checkpoint",type="str",
-					  dest="checkpoint",
-					  default=None,
-					  help="Path to pretrained model SS net")
+					dest="checkpoint",
+					default=None,
+					help="Path to pretrained model SS net")
 	parser.add_option("--train",action="store_true",
-					  dest="train",
-					  default=False,
-					  help="run training")
+					dest="train",
+					default=False,
+					help="run training")
 	parser.add_option("--val",action="store_true",
-					  dest="val",
-					  default=False,
-					  help="run validation",)
+					dest="val",
+					default=False,
+					help="run validation",)
 	parser.add_option("--test",action="store_true",
-					  dest="test",
-					  default=False,
-					  help="run testing (generate result images)",)
-	parser.add_option("--num-steps-stop", dest="num_steps_stop",
-					  type=int,
-					  default=150000,
-					  help="Number of training steps for early stopping.")
+					dest="test",
+					default=False,
+					help="run testing (generate result images)",)
 	parser.add_option("--snapshot-dir", type=str,
-					  dest="snapshot_dir",
-					  default="./snapshots/",
-					  help="Where to save snapshots of the model.")
+					dest="snapshot_dir",
+					default="./snapshots/",
+					help="Where to save snapshots of the model.")
 	parser.add_option("--log-dir", type=str,
 					  dest="log_dir",
 					  default="./log/image_level",
 					  help="Path to the directory of log.")
-	parser.add_option("--weight-decay", type=float,
-					  dest="weight_decay",
-					  default=0.0005,
-					  help="Regularisation parameter for L2-loss.")
 	parser.add_option("--iter-size", type=int,
 					  dest="iter_size",
 					  default=1,
@@ -131,44 +132,11 @@ if __name__ == "__main__":
 		device = device,
 		args = args,
 	)
-	# model_D1 = load_models(
-	# 	mode = "Discriminator",
-	# 	device = device,
-	# 	args = args,
-	# )
 	model_D = load_models(
 		mode="Discriminator",
 		device=device,
 		args=args,
 	)
-
-	dummy_input = torch.zeros(1, 1, 184, 184, dtype=torch.float, requires_grad=False).to(args.device)
-	seg_out, _ = model_SS(dummy_input)
-	make_dot(seg_out)
-
-	# model_SS = DeeplabMulti(num_classes=args.classes)
-	# model_D1 = FCDiscriminator(num_classes=args.classes)
-	# model_D2 = FCDiscriminator(num_classes=args.classes)
-	# interp = nn.Upsample(
-	# 	size=(args.image_size, args.image_size),
-	# 	mode='bilinear',
-	# 	align_corners=True
-	# )
-	# interp_target = nn.Upsample(
-	# 	size=(args.image_size, args.image_size),
-	# 	mode='bilinear',
-	# 	align_corners=True
-	# )
-
-	### use SGD for source only SS ###
-	# optimizer_SS = optim.SGD(
-	# 	model_SS.parameters(),
-	# 	lr = args.lr_SS,
-	# 	momentum = args.momentum,
-	# 	weight_decay = args.weight_decay,
-	# )
-	# optimizer_SS.zero_grad()
-	### use SGD for source only SS ###
 
 	optimizer_SS = optim.Adam(
 		model_SS.parameters(),
@@ -207,6 +175,8 @@ if __name__ == "__main__":
 		args.total_iterations = int(args.num_epochs *
 									trainset_openeds.__len__() / args.batch_size)
 		args.total_source = trainset_openeds.__len__()
+		args.semi_start = int(args.semi_start_epoch *
+							  trainset_openeds.__len__() / args.batch_size)
 
 	if args.val:
 		valset_calipso, valloader_calipso = dataloader_dual(
@@ -225,26 +195,45 @@ if __name__ == "__main__":
 		bce_loss = torch.nn.BCEWithLogitsLoss()
 		seg_loss_source = torch.nn.CrossEntropyLoss(weight=class_weight_openeds)
 		seg_loss_target = torch.nn.CrossEntropyLoss(weight=class_weight_calipso)
+		semi_loss_target = torch.nn.CrossEntropyLoss(ignore_index=255)
 
 		trainloader_iter = enumerate(trainloader_openeds)
 		targetloader_iter = enumerate(trainloader_calipso)
 
 
+		# val_loss = run_training(
+		# 	trainloader_source = trainloader_openeds,
+		# 	trainloader_target = trainloader_calipso,
+		# 	trainloader_iter = trainloader_iter,
+		# 	targetloader_iter = targetloader_iter,
+		# 	val_loader = valloader_calipso,
+		# 	model_SS = model_SS,
+		# 	model_D = model_D,
+		# 	bce_loss = bce_loss,
+		# 	seg_loss_source = seg_loss_source,
+		# 	seg_loss_target = seg_loss_target,
+		# 	optimizer_SS = optimizer_SS,
+		# 	optimizer_D = optimizer_D,
+		# 	writer = writer,
+		# 	args = args,
+		# )
+
 		val_loss = run_training(
-			trainloader_source = trainloader_openeds,
-			trainloader_target = trainloader_calipso,
-			trainloader_iter = trainloader_iter,
-			targetloader_iter = targetloader_iter,
-			val_loader = valloader_calipso,
-			model_SS = model_SS,
-			model_D = model_D,
-			bce_loss = bce_loss,
-			seg_loss_source = seg_loss_source,
-			seg_loss_target = seg_loss_target,
-			optimizer_SS = optimizer_SS,
-			optimizer_D = optimizer_D,
-			writer = writer,
-			args = args,
+			trainloader_source=trainloader_openeds,
+			trainloader_target=trainloader_calipso,
+			trainloader_iter=trainloader_iter,
+			targetloader_iter=targetloader_iter,
+			val_loader=valloader_calipso,
+			model_SS=model_SS,
+			model_D=model_D,
+			bce_loss=bce_loss,
+			seg_loss_source=seg_loss_source,
+			seg_loss_target=seg_loss_target,
+			semi_loss_target=semi_loss_target,
+			optimizer_SS=optimizer_SS,
+			optimizer_D=optimizer_D,
+			writer=writer,
+			args=args,
 		)
 
 		try:
