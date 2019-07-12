@@ -1,0 +1,4 @@
+python3 __main__yirus_gan.py  --data-root "/home/yirus/Datasets/OpenEDS_SS_TL/,/home/yirus/Datasets/Calipso/GT_0.25/" --ini-file Ini_Files/pixel_level/semi_0.1_target_ratio_1_1.ini --lambda-seg-source 1.0 --lambda-seg-target 1.0 --lambda-adv-target 0.02 --lambda-semi-target 0.1 --mask-T 0.5 --semi-start-epoch 10 --train-target-SS --train --val --tensorboard  --output-dir results/pixel_level/semi_0.1_target_ratio_1_1/mask_0.5/ --log-dir logs/pixel_level/semi_0.1_target_ratio_1_1/mask_0.5/ --snapshot-dir snapshots/pixel_level/semi_0.1_target_ratio_1_1/mask_0.5/
+
+Global Mean Accuracy: 0.9721034380907372
+Mean IOU: 0.8809042715459948

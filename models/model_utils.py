@@ -7,6 +7,8 @@ import torch.onnx
 
 from collections import Iterable
 
+from .discriminator import init_net
+
 
 file_path = os.path.dirname(os.path.realpath(__file__))
 sys.path.append(file_path)
@@ -96,7 +98,8 @@ def load_models(mode, device, args):
 	elif mode == "Discriminator":
 		from models.discriminator import FCDiscriminator_Scalar, \
 			FCDiscriminator_Scalar_BN, \
-			FCDiscriminator_Pixel
+			FCDiscriminator_Pixel, \
+			PatchGAN
 
 		if args.discriminator == "image_level":
 			model = FCDiscriminator_Scalar(num_classes=NUM_CLASSES)
@@ -104,6 +107,9 @@ def load_models(mode, device, args):
 			model = FCDiscriminator_Scalar_BN(num_classes=NUM_CLASSES)
 		elif args.discriminator == "pixel_level":
 			model = FCDiscriminator_Pixel(num_classes=NUM_CLASSES, input_size = [184,184])
+		elif args.discriminator == "patch_level":
+			model = PatchGAN()
+			model = init_net(model, device, init_type='normal', init_gain=0.02)
 		else:
 			raise ValueError("Invalid Discriminator mode! {}".
 							 format(args.discriminator))

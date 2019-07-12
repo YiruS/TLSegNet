@@ -1,0 +1,9 @@
+Global Mean Accuracy: 0.9370731656164266
+Mean IOU: 0.7689459993463429
+Mean Recall: 0.9370731656164266
+Mean Precision: 0.9374550860685742
+Mean F1: 0.9331091661174159
+Output directory not specified
+Generating predicted images ...
+[Errno 2] No such file or directory: 'None/Test_Images'
+

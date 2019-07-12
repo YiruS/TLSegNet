@@ -1,0 +1,554 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="a39765af-fc72-4251-a61b-9da353769263" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/helper_functions/image_pool.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/pixel_level/semi_0.1_source_only/mask_0.5/events.out.tfevents.1561321823.yirus-fedora-IT2277294" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/pixel_level/semi_0.1_source_only/mask_0.5/events.out.tfevents.1561327262.yirus-fedora-IT2277294" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/pixel_level/semi_0.1_target_ratio_1_1/mask_0.5/events.out.tfevents.1561321668.yirus-fedora-IT2277294" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/pixel_level/semi_0.1_target_ratio_1_1/mask_0.5/events.out.tfevents.1561327275.yirus-fedora-IT2277294" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/pixel_level/source_only/TrainVal.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/pixel_level/source_only/events.out.tfevents.1561158924.yirus-fedora-IT2277294" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/pixel_level/target_1_1/events.out.tfevents.1561159554.yirus-fedora-IT2277294" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/pixel_level/target_1_1_pretrained/events.out.tfevents.1561327439.yirus-fedora-IT2277294" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/source_only_adam_adv_0.01/events.out.tfevents.1560211786.yirus-fedora-IT2277294" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/source_only_adam_adv_0.02/events.out.tfevents.1560466235.yirus-fedora-IT2277294" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/source_only_adam_adv_0.02/v1/events.out.tfevents.1560305815.yirus-fedora-IT2277294" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/source_only_adam_adv_0.1/command_line.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/source_only_adam_adv_0.1/events.out.tfevents.1560186617.yirus-fedora-IT2277294" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/source_only_adam_adv_0.1/events.out.tfevents.1560193098.yirus-fedora-IT2277294" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/source_only_adam_adv_0.1/events.out.tfevents.1560193195.yirus-fedora-IT2277294" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/source_only_adam_adv_0.1/events.out.tfevents.1560193376.yirus-fedora-IT2277294" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/source_only_adam_adv_0.1/events.out.tfevents.1560193420.yirus-fedora-IT2277294" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/source_only_adam_adv_0.1/events.out.tfevents.1560193597.yirus-fedora-IT2277294" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/source_only_adam_adv_0.1/events.out.tfevents.1560193783.yirus-fedora-IT2277294" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/source_only_adam_adv_0.1/events.out.tfevents.1560193829.yirus-fedora-IT2277294" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/source_only_adam_adv_0.1/events.out.tfevents.1560193931.yirus-fedora-IT2277294" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/source_only_adam_adv_0.1/events.out.tfevents.1560194084.yirus-fedora-IT2277294" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/source_only_adam_adv_0.1/events.out.tfevents.1560194238.yirus-fedora-IT2277294" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/source_only_adam_adv_0.1/events.out.tfevents.1560194366.yirus-fedora-IT2277294" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/source_only_adam_adv_0.1/events.out.tfevents.1560199152.yirus-fedora-IT2277294" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/source_only_sgd/events.out.tfevents.1560130726.yirus" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/target_SS_ratio_0.2_1_adv_0.02/events.out.tfevents.1560377713.yirus-fedora-IT2277294" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/target_SS_ratio_0.3_1_adv_0.02/events.out.tfevents.1560377247.yirus-fedora-IT2277294" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/target_SS_ratio_1_1_adv_0.02/events.out.tfevents.1560376870.yirus-fedora-IT2277294" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/target_SS_ratio_28_adv_0.1/events.out.tfevents.1560142846.yirus" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/target_SS_ratio_37_adv_0.02/events.out.tfevents.1560373899.yirus-fedora-IT2277294" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/target_SS_ratio_37_adv_0.02/v1/events.out.tfevents.1560199449.yirus-fedora-IT2277294" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/target_SS_ratio_37_adv_0.1/command_line.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/target_SS_ratio_37_adv_0.1/events.out.tfevents.1560186861.yirus-fedora-IT2277294" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/tmp/image_level/events.out.tfevents.1560117205.yirus" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/tmp/image_level/events.out.tfevents.1560117518.yirus" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/tmp/single_level/events.out.tfevents.1559965496.yirus" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/results/pixel_level/semi_0.1_source_only/TrainVal.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/results/pixel_level/semi_0.1_source_only/mask_0.5/prediction_1_51_3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/results/pixel_level/semi_0.1_target_ratio_1_1/TrainVal.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/results/pixel_level/semi_0.1_target_ratio_1_1/mask_0.5/prediction_1_8_3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/results/pixel_level/source_only_pretrained/TrainVal.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/results/pixel_level/target_1_1_pretrained/prediction_1_0_0.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/results/pixel_level/target_ratio_1_1_pretrained/TrainVal.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/snapshots/pixel_level/semi_0.1_source_only/mask_0.5/modelSS_train_best.pth" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/snapshots/pixel_level/semi_0.1_source_only/mask_0.5/model_val_best.pth" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/snapshots/pixel_level/semi_0.1_target_ratio_1_1/mask_0.5/modelSS_train_best.pth" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/snapshots/pixel_level/semi_0.1_target_ratio_1_1/mask_0.5/model_val_best.pth" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/snapshots/pixel_level/target_1_1_pretrained/modelSS_train_best.pth" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/snapshots/pixel_level/target_1_1_pretrained/model_val_best.pth" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/snapshots/target_ratio_1_1_adv_0.02_pretrained/modelSS_train_best.pth" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/snapshots/target_ratio_1_1_adv_0.02_pretrained/model_val_best.pth" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/__main__yirus_gan.py" beforeDir="false" afterPath="$PROJECT_DIR$/__main__yirus_gan.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/helper_functions/trainer.py" beforeDir="false" afterPath="$PROJECT_DIR$/helper_functions/trainer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/discriminator.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/discriminator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/model_utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/model_utils.py" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <splitter split-orientation="horizontal" split-proportion="0.45106384">
+      <split-first>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/__main__yirus_gan.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="303">
+                  <caret line="16" column="49" selection-start-line="16" selection-start-column="40" selection-end-line="16" selection-end-column="49" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/helper_functions/image_pool.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="726">
+                  <caret line="42" column="30" selection-start-line="42" selection-start-column="30" selection-end-line="42" selection-end-column="30" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/models/model_utils.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="3">
+                  <caret line="93" selection-start-line="93" selection-end-line="93" />
+                  <folding>
+                    <element signature="e#0#82#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/../../AdvSemiSeg/train.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="242">
+                  <caret line="350" column="43" selection-start-line="350" selection-start-column="43" selection-end-line="350" selection-end-column="43" />
+                  <folding>
+                    <element signature="e#0#15#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/helper_functions/trainer.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="303">
+                  <caret line="206" column="25" selection-start-line="206" selection-start-column="8" selection-end-line="206" selection-end-column="25" />
+                  <folding>
+                    <element signature="e#0#82#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$USER_HOME$/Datasets/generate_data_for_transfer_learning.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="1552">
+                  <caret line="186" selection-start-line="186" selection-end-line="186" />
+                  <folding>
+                    <element signature="e#0#9#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/models/discriminator.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="388">
+                  <caret line="82" column="45" selection-start-line="82" selection-start-column="45" selection-end-line="82" selection-end-column="45" />
+                  <folding>
+                    <element signature="e#0#16#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-second>
+    </splitter>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>seg_loss_target</find>
+      <find>totall</find>
+      <find>total</find>
+      <find>mask</find>
+      <find>loss</find>
+      <find>semi_start</find>
+      <find>bce_loss</find>
+      <find>criterion_ADV</find>
+      <find>history_fake_mask</find>
+      <find>source_label</find>
+      <find>image_pool</find>
+      <find>pred_softmax</find>
+      <find>pred_softmax_target</find>
+      <find>history_pool_true</find>
+      <find>ImagePool</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/Ini_Files/pixel_level/segnet_small_ce_source_only_adam_adv_0.02.ini" />
+        <option value="$PROJECT_DIR$/helper_functions/image_pool.py" />
+        <option value="$PROJECT_DIR$/__main__yirus_gan.py" />
+        <option value="$PROJECT_DIR$/models/discriminator.py" />
+        <option value="$PROJECT_DIR$/models/model_utils.py" />
+        <option value="$PROJECT_DIR$/Ini_Files/patch_level/target_ratio_1_1.ini" />
+        <option value="$PROJECT_DIR$/helper_functions/trainer.py" />
+        <option value="$USER_HOME$/Datasets/generate_data_for_transfer_learning.py" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="1600" />
+    <option name="y" value="624" />
+    <option name="width" value="2550" />
+    <option name="height" value="1566" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="TLSegNet" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TLSegNet" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TLSegNet" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TLSegNet" type="462c0819:PsiDirectoryNode" />
+              <item name="helper_functions" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TLSegNet" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TLSegNet" type="462c0819:PsiDirectoryNode" />
+              <item name="models" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TLSegNet" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TLSegNet" type="462c0819:PsiDirectoryNode" />
+              <item name="results" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TLSegNet" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TLSegNet" type="462c0819:PsiDirectoryNode" />
+              <item name="results" type="462c0819:PsiDirectoryNode" />
+              <item name="pixel_level" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TLSegNet" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TLSegNet" type="462c0819:PsiDirectoryNode" />
+              <item name="snapshots" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TLSegNet" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TLSegNet" type="462c0819:PsiDirectoryNode" />
+              <item name="utils" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Datasets/generate_data_for_transfer_learning.py" />
+    <property name="restartRequiresConfirmation" value="false" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Python.generate_data_for_transfer_learning">
+    <configuration name="__main__yirus_gan" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="TLSegNet" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="$USER_HOME$/virtualenvs/coretech/bin/python3" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/__main__yirus_gan.py" />
+      <option name="PARAMETERS" value="--data-root &quot;$USER_HOME$/Datasets/OpenEDS_SS_TL/,$USER_HOME$/Datasets/Calipso/GT_0.25/&quot; --ini-file Ini_Files/pixel_level/source_only_pixel.ini --semi-start 0 --mask-T 0.2  --train --val" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="generate_data_for_transfer_learning" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="TLSegNet" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$USER_HOME$/Datasets" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$USER_HOME$/Datasets/generate_data_for_transfer_learning.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Python.__main__yirus_gan" />
+      <item itemvalue="Python.generate_data_for_transfer_learning" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.generate_data_for_transfer_learning" />
+        <item itemvalue="Python.__main__yirus_gan" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a39765af-fc72-4251-a61b-9da353769263" name="Default Changelist" comment="" />
+      <created>1560537248961</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1560537248961</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="1600" y="624" width="2560" height="1566" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.13130915" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.16951567" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.31196582" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info anchor="bottom" id="Terminal" order="8" />
+      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
+      <window_info anchor="bottom" id="Python Console" order="10" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout>
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.ini" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/visualize_model.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4114">
+          <caret line="187" selection-start-line="187" selection-end-line="187" />
+          <folding>
+            <element signature="e#0#82#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ini_Files/segnet_small_ce_target_SS.ini">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="44">
+          <caret line="2" column="22" selection-start-line="2" selection-start-column="11" selection-end-line="2" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data_provider/eyeDataset.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1344">
+          <caret line="82" selection-start-line="82" selection-end-line="82" />
+          <folding>
+            <element signature="e#0#37#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/virtualenvs/coretech/lib64/python3.7/site-packages/torch/nn/functional.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="332">
+          <caret line="1872" selection-start-line="1872" selection-end-line="1872" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/virtualenvs/coretech/lib64/python3.7/site-packages/torch/autograd/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="332">
+          <caret line="92" selection-start-line="92" selection-end-line="92" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/virtualenvs/coretech/lib64/python3.7/site-packages/torch/nn/modules/loss.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="332">
+          <caret line="941" selection-start-line="941" selection-end-line="941" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ini_Files/pixel_level/segnet_small_ce_source_only_adam_adv_0.02.ini">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="15" lean-forward="true" selection-start-column="15" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/virtualenvs/coretech/lib64/python3.7/site-packages/torch/utils/data/sampler.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="337">
+          <caret line="65" selection-start-line="65" selection-end-line="65" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ini_Files/pixel_level/target_ratio_1_1.ini">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="6" selection-start-line="6" selection-end-line="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/helper_functions/trainer_utils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2651">
+          <caret line="16" selection-start-line="16" selection-end-line="16" />
+          <folding>
+            <element signature="e#0#82#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ini_Files/pixel_level/semi_0.1_target_ratio_1_1.ini">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="17" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ini_Files/patch_level/target_ratio_1_1.ini">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="352">
+          <caret line="16" column="7" lean-forward="true" selection-start-line="16" selection-start-column="7" selection-end-line="16" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/virtualenvs/coretech/lib64/python3.7/site-packages/torch/nn/modules/module.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="493" selection-start-line="493" selection-end-line="493" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/model_utils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3">
+          <caret line="93" selection-start-line="93" selection-end-line="93" />
+          <folding>
+            <element signature="e#0#82#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../AdvSemiSeg/train.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="350" column="43" selection-start-line="350" selection-start-column="43" selection-end-line="350" selection-end-column="43" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/virtualenvs/coretech/lib64/python3.7/site-packages/torch/tensor.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="332">
+          <caret line="457" selection-start-line="457" selection-end-line="457" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/helper_functions/config.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="327">
+          <caret line="49" selection-start-line="49" selection-end-line="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../AdaptSegNet/train_gta2cityscapes_multi.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="572">
+          <caret line="257" column="49" selection-start-line="257" selection-start-column="49" selection-end-line="257" selection-end-column="49" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Datasets/generate_data_for_transfer_learning.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1552">
+          <caret line="186" selection-start-line="186" selection-end-line="186" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/discriminator.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="388">
+          <caret line="82" column="45" selection-start-line="82" selection-start-column="45" selection-end-line="82" selection-end-column="45" />
+          <folding>
+            <element signature="e#0#16#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/helper_functions/trainer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="303">
+          <caret line="206" column="25" selection-start-line="206" selection-start-column="8" selection-end-line="206" selection-end-column="25" />
+          <folding>
+            <element signature="e#0#82#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/__main__yirus_gan.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="303">
+          <caret line="16" column="49" selection-start-line="16" selection-start-column="40" selection-end-line="16" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/helper_functions/image_pool.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="726">
+          <caret line="42" column="30" selection-start-line="42" selection-start-column="30" selection-end-line="42" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

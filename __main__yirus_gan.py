@@ -14,6 +14,7 @@ from data_provider.eyeDataset import dataloader_dual
 from helper_functions.analysis import generate_result_images
 from helper_functions.config import ReadConfig_GAN, augment_args_GAN
 from helper_functions.trainer import run_training, run_testing
+from helper_functions.image_pool import ImagePool
 from models.model_utils import load_models
 
 import torch
@@ -40,6 +41,14 @@ if __name__ == "__main__":
 					  dest="image_size",
 					  default=184,
 					  help="image_size scalar (currently support square images)")
+	parser.add_option("--GAN-loss", type="str",
+					  dest="GAN_loss",
+					  default="BCE",
+					  help="BCE/LS")
+	parser.add_option("--pool-size", type=int,
+					  dest="pool_size",
+					  default=0,
+					  help="#buffer size to train discriminator")
 	parser.add_option("--lambda-seg-source", type="float",
 					  dest="lambda_seg_source",
 					  default=1.0,
@@ -169,9 +178,19 @@ if __name__ == "__main__":
 			weight = class_weight_calipso,
 		).to(device)
 
-		criterion_ADV = torch.nn.BCEWithLogitsLoss().to(device)
-		criterion_D = torch.nn.BCEWithLogitsLoss().to(device)
+		if args.GAN_loss == "BCE":
+			gan_loss = torch.nn.BCEWithLogitsLoss().to(device)
+			# criterion_ADV = torch.nn.BCEWithLogitsLoss().to(device)
+			# criterion_D = torch.nn.BCEWithLogitsLoss().to(device)
+		elif args.GAN_loss == "LS":
+			gan_loss = torch.nn.MSELoss().to(device)
+			# criterion_ADV = torch.nn.MSELoss().to(device)
+			# criterion_D = torch.nn.MSELoss().to(device)
+		else:
+			raise ValueError("Unknown loss: {}".format(args.GAN_loss))
 
+		history_true_mask = ImagePool(args.pool_size)
+		history_fake_mask = ImagePool(args.pool_size)
 		args.total_iterations = int(args.num_epochs *
 									trainset_openeds.__len__() / args.batch_size)
 		args.total_source = trainset_openeds.__len__()
@@ -192,31 +211,13 @@ if __name__ == "__main__":
 		model_SS.to(args.device)
 		model_D.to(args.device)
 
-		bce_loss = torch.nn.BCEWithLogitsLoss()
+		# bce_loss = torch.nn.BCEWithLogitsLoss()
 		seg_loss_source = torch.nn.CrossEntropyLoss(weight=class_weight_openeds)
 		seg_loss_target = torch.nn.CrossEntropyLoss(weight=class_weight_calipso)
 		semi_loss_target = torch.nn.CrossEntropyLoss(ignore_index=255)
 
 		trainloader_iter = enumerate(trainloader_openeds)
 		targetloader_iter = enumerate(trainloader_calipso)
-
-
-		# val_loss = run_training(
-		# 	trainloader_source = trainloader_openeds,
-		# 	trainloader_target = trainloader_calipso,
-		# 	trainloader_iter = trainloader_iter,
-		# 	targetloader_iter = targetloader_iter,
-		# 	val_loader = valloader_calipso,
-		# 	model_SS = model_SS,
-		# 	model_D = model_D,
-		# 	bce_loss = bce_loss,
-		# 	seg_loss_source = seg_loss_source,
-		# 	seg_loss_target = seg_loss_target,
-		# 	optimizer_SS = optimizer_SS,
-		# 	optimizer_D = optimizer_D,
-		# 	writer = writer,
-		# 	args = args,
-		# )
 
 		val_loss = run_training(
 			trainloader_source=trainloader_openeds,
@@ -226,12 +227,14 @@ if __name__ == "__main__":
 			val_loader=valloader_calipso,
 			model_SS=model_SS,
 			model_D=model_D,
-			bce_loss=bce_loss,
+			gan_loss=gan_loss,
 			seg_loss_source=seg_loss_source,
 			seg_loss_target=seg_loss_target,
 			semi_loss_target=semi_loss_target,
 			optimizer_SS=optimizer_SS,
 			optimizer_D=optimizer_D,
+			history_pool_true=history_true_mask,
+			history_pool_fake=history_fake_mask,
 			writer=writer,
 			args=args,
 		)

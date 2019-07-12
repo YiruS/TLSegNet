@@ -1,0 +1,3 @@
+python3 __main__yirus_gan.py  --data-root "/home/yirus/Datasets/OpenEDS_SS_TL/,/home/yirus/Datasets/Calipso/GT_0.25" --ini-file Ini_Files/pixel_level/source_only_pixel.ini --lambda-seg-source 1.0 --lambda-seg-target 0.0 --lambda-adv-target 0.02 --lambda-semi-target 0.1 --mask-T 0.05 --semi-start-epoch 10 --checkpoint snapshots/target_ratio_1_1_adv_0.02_pretrained/modelSS_train_best.pth --pool-size 32 --log-dir logs/pixel_level/DNet_semi/semi_0.1/source_only/pretrained_history/mask_0.05/ --snapshot-dir snapshots/pixel_level/DNet_semi/semi_0.1/source_only/pretrained_history/mask_0.05/ --output-dir results/pixel_level/DNet_semi/semi_0.1/source_only/pretrained_history/mask_0.05/ --train --val --tensorboar
+
+

@@ -1,0 +1,12 @@
+python3 __main__yirus_gan.py  --data-root "/data/users/yirus/Datasets/OpenEDS_SS_TL,/data/users/yirus/Datasets/Calipso/GT_0.25" --ini-file Ini_Files/pixel_level/semi_0.1_source_only.ini --checkpoint snapshots/pixel_level/DNet/semi_0.1/source_only/pretrained_history/mask_0.1/model_val_best.pth  --test
+
+Global Mean Accuracy: 0.9502730948462419
+Mean IOU: 0.8284719862523492
+Mean Recall: 0.9502730948462419
+Mean Precision: 0.9510211248589531
+Mean F1: 0.9470258741921401
+Output directory not specified
+Generating predicted images ...
+
+
+

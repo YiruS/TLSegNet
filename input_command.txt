@@ -1,0 +1,5 @@
+--data-root "/home/yirus/Datasets/OpenEDS_SS_TL/,/home/yirus/Datasets/Calipso/GT_0.25/" --ini-file Ini_Files/segnet_small_ce_target_SS.ini --lambda-adv-target 0.06 (0.08?) --lambda-seg-source 0.2 --lambda-seg-taget 0.8 --train --val  --train-target-SS
+
+--data-root "/home/yirus/Datasets/OpenEDS_SS_TL/,/home/yirus/Datasets/Calipso/GT_0.25/" --ini-file Ini_Files/segnet_small_ce_target_SS.ini --lambda-adv-target 0.1 --lambda-seg-source 1.0 --lambda-seg-taget 0 --train --val  
+
+

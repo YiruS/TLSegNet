@@ -1,0 +1,11 @@
+python3 __main__yirus_gan.py  --data-root "/data/users/yirus/Datasets/OpenEDS_SS_TL,/data/users/yirus/Datasets/Calipso/GT_0.25" --ini-file Ini_Files/pixel_level/semi_0.1_source_only.ini --checkpoint snapshots/pixel_level/DNet/semi_0.2/source_only/pretrained_history/mask_0.1/model_val_best.pth  --test
+
+Global Mean Accuracy: 0.9399776388780715
+Mean IOU: 0.810935042203019
+Mean Recall: 0.9399776388780715
+Mean Precision: 0.9416853981587983
+Mean F1: 0.9347298048067926
+Output directory not specified
+Generating predicted images ...
+[Errno 2] No such file or directory: 'None/Test_Images'
+

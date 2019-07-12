@@ -1,0 +1,3 @@
+CUDA_VISIBLE_DEVICES=7 python3 __main__yirus_gan.py  --data-root "/data/users/yirus/Datasets/OpenEDS_SS_TL,/data/users/yirus/Datasets/Calipso/GT_0.25" --ini-file Ini_Files/pixel_level/semi_0.1_source_only.ini --lambda-seg-source 1.0 --lambda-seg-target 0.0 --lambda-adv-target 0.02 --lambda-semi-target 0.1 --mask-T 0.4 --semi-start-epoch 10 --checkpoint snapshots/target_ratio_1_1_adv_0.02_pretrained/modelSS_train_best.pth  --pool-size 32 --log-dir logs/pixel_level/DNet/semi_0.1/source_only/pretrained_history/mask_0.4/ --snapshot-dir snapshots/pixel_level/DNet/semi_0.1/source_only/pretrained_history/mask_0.4/ --output-dir results/pixel_level/DNet/semi_0.1/source_only/pretrained_history/mask_0.4/ --train --val --tensorboard
+
+

@@ -1,0 +1,4 @@
+python3 __main__yirus_gan.py  --data-root "/data/users/yirus/Datasets/OpenEDS_SS_TL,/data/users/yirus/Datasets/Calipso/GT_0.25" --ini-file Ini_Files/pixel_level/semi_0.1_source_only.ini --checkpoint snapshots/pixel_level/DNet/semi_0.2/source_only/pretrained_history/mask_0.3/model_val_best.pth  --test
+
+
+
